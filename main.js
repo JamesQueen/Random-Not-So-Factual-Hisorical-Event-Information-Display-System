@@ -34,3 +34,6 @@ const locations = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Ale
 "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
 
 const events = ["horrific fire", "earthquake", "temperature of 100 degress", "mass flooding", "hurricane force winds"];
+
+
+const displayMessage = `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
