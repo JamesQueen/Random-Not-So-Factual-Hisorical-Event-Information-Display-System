@@ -35,5 +35,14 @@ const locations = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Ale
 
 const events = ["horrific fire", "earthquake", "temperature of 100 degress", "mass flooding", "hurricane force winds"];
 
+// Function To Create Random Date
+const createDate = (months, days) => {
+    // Get The Random Month
+    const month = months[Math.floor(Math.random() * months.length)]
+}
 
-const displayMessage = `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
+// Function that will create the Output
+const createOutput = (date, location, selectedEvent) => {
+    return `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
+}
+
