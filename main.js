@@ -67,6 +67,11 @@ const createDate = (months, days) => {
     return `${month} ${day} ${year}`;
 }
 
+// Gets A Random Location From The Location Aray
+const createLocation = locations => {
+    return locations[Math.floor(Math.random() * locations.length)]
+}
+
 
 // Function that will create the Output
 const createOutput = (date, location, selectedEvent) => {
@@ -75,4 +80,4 @@ const createOutput = (date, location, selectedEvent) => {
 
 
 // Testing Area::
-console.log(createDate(months, days));
+console.log(createLocation(locations));
