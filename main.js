@@ -33,7 +33,7 @@ const locations = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Ale
 "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo", "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston",
 "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
 
-const events = ["horrific fire", "earthquake", "temperature of 100 degress", "mass flooding", "hurricane force winds"];
+const events = ["an horrific fire", "an earthquake", "a temperature of 100 degress", "a mass flooding", "hurricane force winds"];
 
 
 // Function To Create Random Date
@@ -75,10 +75,16 @@ const getRandom = ary => {
 
 
 // Function that will create the Output
-const createOutput = (date, location, selectedEvent) => {
-    return `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
+const createOutput = (date) => {
+    const location = getRandom(locations);
+    const selectedEvent = getRandom(events);
+    return `Did you know that on ${date}, downtown ${location} experienced ${selectedEvent}`;
 }
 
+const createMessage = () => {
+    const date = createDate(months, days);
+    console.log(createOutput(date))
+}
 
 // Testing Area::
-console.log(getRandom(locations));
+createMessage();
