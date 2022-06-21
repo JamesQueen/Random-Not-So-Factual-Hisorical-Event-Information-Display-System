@@ -67,9 +67,22 @@ const createDate = (months, days) => {
     return `${month} ${day} ${year}`;
 }
 
+
+// Gets A Random Value From An Aray (Inclusive of all elements)
+const getRandom = ary => {
+    return ary[Math.floor(Math.random() * ary.length)]
+}
+
+
 // Gets A Random Location From The Location Aray
 const createLocation = locations => {
     return locations[Math.floor(Math.random() * locations.length)]
+}
+
+
+// Gets A Random Event From The Event Aray
+const createEvent = events => {
+    return events[Math.floor(Math.random() * events.length)];
 }
 
 
@@ -80,4 +93,4 @@ const createOutput = (date, location, selectedEvent) => {
 
 
 // Testing Area::
-console.log(createLocation(locations));
+console.log(getRandom(locations));
