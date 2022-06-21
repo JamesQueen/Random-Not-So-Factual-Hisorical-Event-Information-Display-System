@@ -74,18 +74,6 @@ const getRandom = ary => {
 }
 
 
-// Gets A Random Location From The Location Aray
-const createLocation = locations => {
-    return locations[Math.floor(Math.random() * locations.length)]
-}
-
-
-// Gets A Random Event From The Event Aray
-const createEvent = events => {
-    return events[Math.floor(Math.random() * events.length)];
-}
-
-
 // Function that will create the Output
 const createOutput = (date, location, selectedEvent) => {
     return `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
