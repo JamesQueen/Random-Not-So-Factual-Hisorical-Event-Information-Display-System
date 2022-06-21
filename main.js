@@ -35,12 +35,12 @@ const locations = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Ale
 
 const events = ["horrific fire", "earthquake", "temperature of 100 degress", "mass flooding", "hurricane force winds"];
 
+
 // Function To Create Random Date
 const createDate = (months, days) => {
     // Get The Random Month
     const month = months[Math.floor(Math.random() * months.length)];
     
-
     // Get The Random Date (While Checking If Day isValid In The Month)
     let day = 0;
     // Checking Month Then Finding Day Based Off Day Range For Month (ie: jan = 31 days, november = 30 days, feb = 28 days)
@@ -54,12 +54,25 @@ const createDate = (months, days) => {
         console.log('ERROR: Selected Month Is Not Inside Months Aray');
     }
 
-    console.log(month, day);
+
+    // Get A Radom Year Between 1950 and Now
+    const currentYear = new Date().getFullYear();
+    const minYear = 1950
+
+    // Creating A Random Year inclusive of currentyYear and minYear
+    const year = Math.floor(Math.random() * (currentYear - minYear + 1) + minYear);
+
+
+    // Returning a string with month, day, year (ie: November 18 2019)
+    return `${month} ${day} ${year}`;
 }
+
 
 // Function that will create the Output
 const createOutput = (date, location, selectedEvent) => {
     return `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
 }
 
-createDate(months, days);
+
+// Testing Area::
+console.log(createDate(months, days));
