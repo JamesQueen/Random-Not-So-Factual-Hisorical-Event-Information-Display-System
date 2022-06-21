@@ -38,7 +38,23 @@ const events = ["horrific fire", "earthquake", "temperature of 100 degress", "ma
 // Function To Create Random Date
 const createDate = (months, days) => {
     // Get The Random Month
-    const month = months[Math.floor(Math.random() * months.length)]
+    const month = months[Math.floor(Math.random() * months.length)];
+    
+
+    // Get The Random Date (While Checking If Day isValid In The Month)
+    let day = 0;
+    // Checking Month Then Finding Day Based Off Day Range For Month (ie: jan = 31 days, november = 30 days, feb = 28 days)
+    if (month === months[0] || month === months[2] || month === months[4] || month === months[6] || month === months[7] || month === months[9] || month === months[11]){
+        day = days[Math.floor(Math.random() * 31)];
+    } else if (month === months[3] || month === months[5] || month === months[8] || month === months[10]){
+        day = days[Math.floor(Math.random() * 30)];
+    } else if (month === months[1]){
+        day = days[Math.floor(Math.random() * 28)];
+    } else {
+        console.log('ERROR: Selected Month Is Not Inside Months Aray');
+    }
+
+    console.log(month, day);
 }
 
 // Function that will create the Output
@@ -46,3 +62,4 @@ const createOutput = (date, location, selectedEvent) => {
     return `Did you know that on ${date}, donwtown ${location} experienced ${selectedEvent}`;
 }
 
+createDate(months, days);
